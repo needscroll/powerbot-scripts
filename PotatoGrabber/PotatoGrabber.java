@@ -81,7 +81,7 @@ public class PotatoGrabber extends PollingScript<ClientContext> implements Paint
 	public void repaint(Graphics g1) {
 		Graphics2D g = (Graphics2D)g1;
         g.setColor(Color.RED);
-        g.drawString("Grape Grabber", 50, 50);
+        g.drawString("Potato Grabber", 50, 50);
         g.drawString("Current State: " + CURRENT_STATE, 50, 65);
         g.drawString("Potatos Grabbed: " + ITEMS_GRABBED[0], 50, 80);
 	}
