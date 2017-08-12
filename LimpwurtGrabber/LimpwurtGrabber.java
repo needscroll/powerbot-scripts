@@ -14,8 +14,9 @@ import java.util.List;
 import needscroll.LimpwurtGrabber.Tasks.Antiban;
 import needscroll.LimpwurtGrabber.Tasks.Banking;
 import needscroll.LimpwurtGrabber.Tasks.Gather;
-import needscroll.LimpwurtGrabber.Tasks.GoBank;
+import needscroll.LimpwurtGrabber.Tasks.Teleport;
 import needscroll.LimpwurtGrabber.Tasks.GoDungeon;
+import needscroll.LimpwurtGrabber.Tasks.Ladder;
 import needscroll.LimpwurtGrabber.Tasks.WalkHills;
 
 @Script.Manifest(name = "Limpwurtroot Grabber", description = "Collects Limpwurtroots", properties = "author=needscroll; topic=1; client=6;")
@@ -24,7 +25,7 @@ public class LimpwurtGrabber extends PollingScript<ClientContext> implements Pai
 	
 	List<Task> taskList = new ArrayList<Task>();
 	Gather gather = new Gather(ctx);
-	GoBank gobank = new GoBank(ctx);
+	Teleport gobank = new Teleport(ctx);
 	WalkHills walkhills = new WalkHills(ctx);
 	Banking banking = new Banking(ctx);
 	Antiban antiban = new Antiban(ctx);
@@ -36,10 +37,11 @@ public class LimpwurtGrabber extends PollingScript<ClientContext> implements Pai
 		log.info("limpwurt grabber has started");
 		
 		taskList.add(new Antiban(ctx));
+		taskList.add(new Ladder(ctx));
 		taskList.add(new WalkHills(ctx));
 		taskList.add(new GoDungeon(ctx));
 		taskList.add(new Gather(ctx));
-		taskList.add(new GoBank(ctx));
+		taskList.add(new Teleport(ctx));
 		taskList.add(new Banking(ctx));
 	}
 	
