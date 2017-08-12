@@ -21,8 +21,8 @@ public class WalkHills extends Task{
 
 	@Override
 	public boolean activate() {
-		Tile overworld1 = new Tile(3109, 3442, 0); // overworld area
-		Tile overworld2 = new Tile(3170, 3484, 0);
+		Tile overworld1 = new Tile(3107, 3421, 0); // overworld area
+		Tile overworld2 = new Tile(3200, 3489, 0);
 		Area overworld = new Area(overworld1, overworld2);
 		
 		return ctx.backpack.select().count() < 28 && overworld.contains(ctx.players.local());
